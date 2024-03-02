@@ -82,7 +82,7 @@ model.compile(optimizer='adam',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
               metrics=['accuracy'])
 
-model.load_weights('/home/feernen/mysite/xray_model_90_percent.keras')
+model.load_weights('xray_model_90_percent.keras')
 
 
 @app.route('/predict', methods=['GET'])
@@ -124,4 +124,4 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run('0.0.0.0', port=5000)
